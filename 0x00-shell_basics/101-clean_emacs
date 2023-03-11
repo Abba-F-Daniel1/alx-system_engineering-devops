@@ -1,0 +1,7 @@
+#!/bin/bash
+cwd=$(pwd)
+for file in $cwd/*~; do
+  rm $file
+done
+
+echo "All files ending with '~' have been deleted."
