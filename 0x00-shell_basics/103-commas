@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -mindepth 1 -maxdepth 1 -exec sh -c 'if [ -d "{}" ]; then printf "%s/\n" "{}"; else printf "%s\n" "{}"; fi' \; | sort -V | sed 's/^\.\///' | paste -sd, -
+find . -mindepth 1 -maxdepth 1 -exec sh -c 'if [ -d "{}" ] then printf "%s/\n" "{}" else printf "%s\n" "{}"; fi' \ | sort -V | sed 's/^\.\///' | paste -sd, -
