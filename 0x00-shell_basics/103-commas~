@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+trail_slash() {
+    if [[ -d $1 ]]; then printf '%s/\n' "$1"; else printf '%s\n' "$1"; fi;
+}
+
+find . ! -name . -prune \( -name '.*' -o -type d \) -print | while read f; do trail_slash "${f#./}"; done | sort --version-sort | paste -sd, -
+

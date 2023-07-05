@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -mindepth 1 -maxdepth 1 -print0 | xargs -0 -I {} sh -c 'if [ -d "{}" ]; then printf "%s/\n" "{}"; else printf "%s\n" "{}"; fi' | sort --version-sort | sed 's/^\.\///' | paste -sd, -
