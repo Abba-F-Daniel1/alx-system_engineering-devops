@@ -1,3 +1,3 @@
 #!/bin/bash
-printf '%s\n' * .* | sort --version-sort | sed -e 's/^/.\//' -e 's/$/\//' | xargs -d '\n' stat -c '%n %F' | sed -e 's/regular file$//' -e 's/directory\//$/' | cut -d ' ' -f 1 | sed 's/^\.\///' | paste -sd, -
+printf '%s\n' * .* | sort --version-sort | sed -e 's/^/.\//' -e 's/$/\//' | xargs -d '\n' stat -c '%n %F' | sed -e 's/regular file$//' -e 's/directory\//$/' | cut -d ' ' -f 1 | paste -sd, -
 
