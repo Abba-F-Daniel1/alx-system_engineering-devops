@@ -1,8 +1,5 @@
 # 0x0A. Configuration management
 
-![4i8il3B](https://github.com/Official0mega/alx-low_level_programming/assets/122806822/9c3635fd-ff8b-42e8-b850-2e6cac532bfa)
-
-
 # General
 * All your files will be interpreted on Ubuntu 20.04 LTS
 * A*ll your files should end with a new line
