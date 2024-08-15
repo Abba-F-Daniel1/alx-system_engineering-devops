@@ -15,21 +15,18 @@ def top_ten(subreddit):
     headers = {"User-Agent": "Custom"}
 
     try:
-        # Set allow_redirects=False to prevent following redirects
         response = requests.get(url, headers=headers, allow_redirects=False, params={"limit": 10})
-
         if response.status_code == 200:
             try:
                 data = response.json()
                 posts = data.get("data", {}).get("children", [])
-                if not posts:
+                if posts:
+                    for post in posts:
+                        title = post.get("data", {}).get("title")
+                        if title:
+                            print(title)
+                else:
                     print(None)
-                    return
-                
-                for post in posts:
-                    title = post.get("data", {}).get("title")
-                    if title:
-                        print(title)
             except (ValueError, KeyError):
                 print(None)
         else:
